@@ -19,6 +19,7 @@
 
 package main
 
+import _ "github.com/caddy-proxy/forwardproxy"
 import "github.com/mholt/caddy/caddy/caddymain"
 
 var run = caddymain.Run // replaced for tests

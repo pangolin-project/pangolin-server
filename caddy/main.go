@@ -20,7 +20,7 @@
 package main
 
 import _ "github.com/pangolin-project/pangolin-server-proxy-plugin"
-import "github.com/mholt/caddy/caddy/caddymain"
+import "github.com/pangolin-project/pangolin-server/caddy/caddymain"
 
 var run = caddymain.Run // replaced for tests
 

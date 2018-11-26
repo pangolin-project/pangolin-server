@@ -5,6 +5,7 @@ DOWNLOAD_FILE=caddy-x86_64-linux.tar.gz
 DOWNLOAD_FILE_TAG=vpg1.0.0
 DOWNLOAD_URL=https://github.com/pangolin-project/pangolin-server/releases/download/${DOWNLOAD_FILE_TAG}/${DOWNLOAD_FILE}
 CONFIG_FILE=./Caddyfile
+START_SCRIPT_FILE=./start_proxy.sh
 
 Get_Dist_Name()
 {	
@@ -120,16 +121,17 @@ function green(){
     echo -e "\033[32m $1 \033[0m"
 }
 
-touch ./start_server.sh
+
+touch ${START_SCRIPT_FILE}
 if [[ $? -ne 0 ]]; then
 	echo "create start scripts failed"
 	exit -1
 fi
 
-echo "#!/bin/bash" > ./start_proxy.sh
-echo "./caddy -agree -type=http -log=stdout" >> ./start_proxy.sh
+echo "#!/bin/bash" > ${START_SCRIPT_FILE}
+echo "./caddy -agree -type=http -log=stdout" >> ${START_SCRIPT_FILE}
 
-chmod +x ./start_proxy.sh
+chmod +x ${START_SCRIPT_FILE}
 
 rm -f ./caddy
 

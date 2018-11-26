@@ -1,8 +1,10 @@
 #!/bin/bash
 DISTRO='unknown'
 PM='yum'
-DOWNLOAD_URL=https://github.com/pangolin-project/pangolin-server/releases/download/vpg1.0.0/caddy-x86_64-linux.tar.gz
-CONFIG_FILE=./Caddyfile.test
+DOWNLOAD_FILE=caddy-x86_64-linux.tar.gz
+DOWNLOAD_FILE_TAG=vpg1.0.0
+DOWNLOAD_URL=https://github.com/pangolin-project/pangolin-server/releases/download/${DOWNLOAD_FILE_TAG}/${DOWNLOAD_FILE}
+CONFIG_FILE=./Caddyfile
 
 Get_Dist_Name()
 {	
@@ -46,6 +48,9 @@ if [[ $? -ne 0 ]]; then
 	fi
 
 fi
+
+rm -f ${DOWNLOAD_FILE}
+
 echo "### start download caddy server into current directory..."
 wget ${DOWNLOAD_URL} 
 if [[ $? -ne 0 ]]; then
@@ -74,7 +79,7 @@ fi
 read -p "please input your domain:" DOMAIN
 read -p "please input your email:" EMAIL
 
-echo "make sure, your 443 port is open and not being used by other programs"
+echo "make sure!!  your 443 port is open and not being used by other programs"
 
 
 
@@ -95,7 +100,6 @@ echo  "        #adminport ${ADMIN_PORT}" >> ${CONFIG_FILE}
 echo  "        hide_ip" >> ${CONFIG_FILE}
 echo  "        acl {" >> ${CONFIG_FILE}
 echo  "               deny localhost" >> ${CONFIG_FILE}
-echo  "               deny 127.0.0.1" >> ${CONFIG_FILE}
 echo  "            }" >> ${CONFIG_FILE}
 echo  "    }" >> ${CONFIG_FILE}
 echo  "}" >> ${CONFIG_FILE}
@@ -116,7 +120,24 @@ function green(){
     echo -e "\033[32m $1 \033[0m"
 }
 
+touch ./start_server.sh
+if [[ $? -ne 0 ]]; then
+	echo "create start scripts failed"
+	exit -1
+fi
+
+echo "#!/bin/bash" > ./start_proxy.sh
+echo "./caddy -agree -type=http -log=stdout" >> ./start_proxy.sh
+
+chmod +x ./start_proxy.sh
+
+rm -f ./caddy
+
+tar xvf ${DOWNLOAD_FILE}
+
+echo "please run start_proxy.sh to run proxy server and paste the green line blow to using client to connect this server!"
 green "connect url is : hs://${SUFFIX}@${DOMAIN}:443/?caddy=1&adp=${ADMIN_PORT}"
+
 
 
 

@@ -7,7 +7,7 @@ DOWNLOAD_URL=https://github.com/pangolin-project/pangolin-server/releases/downlo
 CONFIG_FILE=./Caddyfile
 START_SCRIPT_FILE=./start_proxy.sh
 
-Get_Dist_Name()
+function Get_Dist_Name()
 {	
     if grep -Eqi "CentOS" /etc/issue || grep -Eq "CentOS" /etc/*-release; then
         DISTRO='CentOS'
@@ -35,6 +35,19 @@ Get_Dist_Name()
     fi
 }
 
+
+## Error
+function red(){
+    echo -e "\033[31m\033[01m[ $1 ]\033[0m"
+}
+
+## warning
+function yellow(){
+    echo -e "\033[33m\033[01m[ $1 ]\033[0m"
+}
+
+
+
 Get_Dist_Name 
 echo "you server distribution version  is ${DISTRO}"
 
@@ -44,7 +57,7 @@ if [[ $? -ne 0 ]]; then
 	echo "wget is not install, install it first!!"
 	`${PM} install -y wget`
 	if [[ $? -ne 0 ]]; then
-	    echo "install wget failed. please install wget manually, then run scripts again"
+	    red "install wget failed. please install wget manually, then run scripts again"
 	    exit -1
 	fi
 
@@ -55,7 +68,7 @@ rm -f ${DOWNLOAD_FILE}
 echo "### start download caddy server into current directory..."
 wget ${DOWNLOAD_URL} 
 if [[ $? -ne 0 ]]; then
-	echo "down caddy failed ${DOWNLOAD_URL}"
+	red "down caddy failed ${DOWNLOAD_URL}"
 	exit -1
 fi
 
@@ -66,21 +79,31 @@ type netstat >/dev/null 2>&1
 if [[ $? -ne 0 ]]; then
 	${PM} install -y netstat
 	if [[ $? -ne 0 ]]; then
-		echo "install netstat command failed, please install it manually"
+		red "install netstat command failed, please install it manually"
 		exit -1
 	fi
-        netstat -anpt | grep 443 >/dev/nul  2>&1
-	if [[ $? -eq 0  ]];then
-	    echo "443 port is used by other programs. please stop it then run scripts again"
-	    exit -1
-	fi
-fi
 
+fi
+netstat -anpt | grep 443  | grep LISTEN > /dev/null  2>&1
+if [[ $? -eq 0  ]];then
+	red "443 port is used by other programs. please stop it then run scripts again!!!!"
+	exit -1
+fi
 
 read -p "please input your domain:" DOMAIN
 read -p "please input your email:" EMAIL
 
-echo "make sure!!  your 443 port is open and not being used by other programs"
+DOMAIN_LEN=`echo -n ${DOMAIN} | wc -c`
+
+
+
+if [[ ${DOMAIN_LEN} -eq 0 ]]; then
+	red "domain is empty, please input domain"
+	exit -1
+fi
+
+
+yellow "make sure!!  your 443 port is open and not being used by other programs"
 
 
 
@@ -110,7 +133,7 @@ type base64 >/dev/null 2>&1
 if [[ $? -ne 0 ]];then
    ${PM} -y install base64
    if [[ $? -ne 0 ]];then
-	   echo "install base64 command tools failed, pls install it manually"
+	   red "install base64 command tools failed, pls install it manually"
 	   exit -1
    fi
 fi
@@ -124,7 +147,7 @@ function green(){
 
 touch ${START_SCRIPT_FILE}
 if [[ $? -ne 0 ]]; then
-	echo "create start scripts failed"
+	red "create start scripts failed"
 	exit -1
 fi
 
@@ -135,9 +158,15 @@ chmod +x ${START_SCRIPT_FILE}
 
 rm -f ./caddy
 
+type tar >/dev/null 2>&1
+if [[ $? -ne 0 ]]; then
+	red "tar is not installed , please install it manully , then run script again"
+	exit -1
+fi
+
 tar xvf ${DOWNLOAD_FILE}
 
-echo "please run start_proxy.sh to run proxy server and paste the green line blow to using client to connect this server!"
+yellow "please run start_proxy.sh to run proxy server and paste the green line blow to using client to connect this server!"
 green "connect url is : hs://${SUFFIX}@${DOMAIN}:443/?caddy=1&adp=${ADMIN_PORT}"
 
 

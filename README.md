@@ -1,6 +1,6 @@
 
 ## pangolin-server 项目是什么？
-pangolin-server是一个https的转发代理服务器。可以用于通过https的隧道协议来代理http的访问请求。可以和客户端（https://github.com/pangolin-project/pangolin-client-pc）配合实现http代理的功能。
+pangolin-server是一个https的转发代理服务器。可以用于通过https的隧道协议来代理http的访问请求。可以和客户端（https://github.com/pangolin-project/pangolin-client-pc)   配合实现http代理的功能。
 让客户端能够轻松实现匿名访问网站和访问无法访问的站点。
 
 ## 如何使用？

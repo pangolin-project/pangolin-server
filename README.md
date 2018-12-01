@@ -5,7 +5,7 @@ pangolin-server是一个https的转发代理服务器。可以用于通过https�
 
 ## 如何使用？
 - 简单部署:
-1. 进入caddy目录下。将install_server.sh的下载到您的linux服务器上(linux 可以使用命令: wget https://github.com/pangolin-project/pangolin-server/blob/master/caddy/install-server.sh) 
+1. 进入caddy目录下。将install_server.sh的下载到您的linux服务器上(linux 可以使用命令: wget https://raw.githubusercontent.com/pangolin-project/pangolin-server/master/caddy/install-server.sh) 
 2. 确保您使用的是root账户，chmod +x ./install_server.sh 
 3. 然后运行该脚本 ./install_server.sh
 4. 在脚本运行的时候会检查您服务器的443端口是否被占用。请确保443端口未被其他程序占用。并且443的防火墙端口开放

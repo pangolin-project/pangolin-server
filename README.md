@@ -16,3 +16,4 @@ pangolin-server是一个https的转发代理服务器。可以用于通过https�
 
 ## 基本原理
  ![](https://github.com/pangolin-project/pangolin-server/blob/master/images/proxy_basic.png)
+当pangolin 客户端连接到pangolin 服务器的时候，会在客户端和服务器端之间建立加密通道来传输数据。同时。电脑的浏览器的流量会被代理到pangolin的客户端上。因此所有被智能代理的网络流量都会经过pangolin客户端的加密通道传输到服务器端，服务器端再去访问真正的网站。保证来所有的代理流量都是经过了加密的。因此可以避开防火墙的检测。

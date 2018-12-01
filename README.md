@@ -15,4 +15,4 @@ pangolin-server是一个https的转发代理服务器。可以用于通过https�
 ![](https://github.com/pangolin-project/pangolin-server/blob/master/images/url_sample.png)
 
 ## 基本原理
-
+ ![](https://github.com/pangolin-project/pangolin-server/blob/master/images/proxy_basic.png)

@@ -14,3 +14,5 @@ pangolin-server是一个https的转发代理服务器。可以用于通过https�
 7. 在脚本运行完成后。还会打印一句: connect url is : hs://xxxxxxxx 类似的语句，此url就是您客户端用户链接此服务器的url。请将此url复制粘贴到您的客户的url输入框即可：
 ![](https://github.com/pangolin-project/pangolin-server/blob/master/images/url_sample.png)
 
+## 基本原理
+

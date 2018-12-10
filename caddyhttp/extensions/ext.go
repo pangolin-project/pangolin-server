@@ -26,7 +26,7 @@ import (
 	"path"
 	"strings"
 
-	"github.com/mholt/caddy/caddyhttp/httpserver"
+	"github.com/pangolin-project/pangolin-server/caddyhttp/httpserver"
 )
 
 // Ext can assume an extension from clean URLs.

@@ -26,7 +26,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/mholt/caddy/telemetry"
+	"github.com/pangolin-project/pangolin-server/telemetry"
 )
 
 // configGroup is a type that keys configs by their hostname

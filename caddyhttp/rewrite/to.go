@@ -21,7 +21,7 @@ import (
 	"path"
 	"strings"
 
-	"github.com/mholt/caddy/caddyhttp/httpserver"
+	"github.com/pangolin-project/pangolin-server/caddyhttp/httpserver"
 )
 
 // To attempts rewrite. It attempts to rewrite to first valid path

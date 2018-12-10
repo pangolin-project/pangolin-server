@@ -22,7 +22,7 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/mholt/caddy/caddyfile"
+	"github.com/pangolin-project/pangolin-server/caddyfile"
 )
 
 /*

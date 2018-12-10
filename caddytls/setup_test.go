@@ -21,7 +21,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/mholt/caddy"
+	"github.com/pangolin-project/pangolin-server"
 	"github.com/xenolf/lego/acmev2"
 )
 

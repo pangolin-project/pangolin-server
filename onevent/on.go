@@ -4,8 +4,8 @@ import (
 	"strings"
 
 	"github.com/google/uuid"
-	"github.com/mholt/caddy"
-	"github.com/mholt/caddy/onevent/hook"
+	"github.com/pangolin-project/pangolin-server"
+	"github.com/pangolin-project/pangolin-server/onevent/hook"
 )
 
 func init() {

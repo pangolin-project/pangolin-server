@@ -21,7 +21,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/mholt/caddy/caddytls"
+	"github.com/pangolin-project/pangolin-server/caddytls"
 )
 
 // TestFileStorage tests the file storage set with the test harness in this

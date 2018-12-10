@@ -21,7 +21,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/mholt/caddy"
+	"github.com/pangolin-project/pangolin-server"
 )
 
 func TestConditions(t *testing.T) {

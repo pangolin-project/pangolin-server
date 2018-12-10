@@ -20,8 +20,8 @@ import (
 	"path/filepath"
 	"strconv"
 
-	"github.com/mholt/caddy"
-	"github.com/mholt/caddy/caddyhttp/httpserver"
+	"github.com/pangolin-project/pangolin-server"
+	"github.com/pangolin-project/pangolin-server/caddyhttp/httpserver"
 )
 
 // setup configures a new errors middleware instance.

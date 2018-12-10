@@ -19,7 +19,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/mholt/caddy/caddyhttp/httpserver"
+	"github.com/pangolin-project/pangolin-server/caddyhttp/httpserver"
 )
 
 func TestConfig_Markdown(t *testing.T) {

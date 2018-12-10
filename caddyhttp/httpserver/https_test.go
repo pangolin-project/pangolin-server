@@ -21,7 +21,7 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/mholt/caddy/caddytls"
+	"github.com/pangolin-project/pangolin-server/caddytls"
 )
 
 func TestRedirPlaintextHost(t *testing.T) {

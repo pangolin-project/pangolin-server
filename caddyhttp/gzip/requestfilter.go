@@ -18,7 +18,7 @@ import (
 	"net/http"
 	"path"
 
-	"github.com/mholt/caddy/caddyhttp/httpserver"
+	"github.com/pangolin-project/pangolin-server/caddyhttp/httpserver"
 )
 
 // RequestFilter determines if a request should be gzipped.

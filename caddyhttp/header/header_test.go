@@ -23,7 +23,7 @@ import (
 	"sort"
 	"testing"
 
-	"github.com/mholt/caddy/caddyhttp/httpserver"
+	"github.com/pangolin-project/pangolin-server/caddyhttp/httpserver"
 )
 
 func TestHeader(t *testing.T) {

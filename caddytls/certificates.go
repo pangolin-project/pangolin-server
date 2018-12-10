@@ -26,7 +26,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/mholt/caddy/telemetry"
+	"github.com/pangolin-project/pangolin-server/telemetry"
 	"golang.org/x/crypto/ocsp"
 )
 

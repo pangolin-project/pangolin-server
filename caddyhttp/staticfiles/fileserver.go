@@ -28,7 +28,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/mholt/caddy"
+	"github.com/pangolin-project/pangolin-server"
 )
 
 // FileServer implements a production-ready file server

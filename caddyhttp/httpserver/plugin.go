@@ -26,11 +26,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/mholt/caddy"
-	"github.com/mholt/caddy/caddyfile"
-	"github.com/mholt/caddy/caddyhttp/staticfiles"
-	"github.com/mholt/caddy/caddytls"
-	"github.com/mholt/caddy/telemetry"
+	"github.com/pangolin-project/pangolin-server"
+	"github.com/pangolin-project/pangolin-server/caddyfile"
+	"github.com/pangolin-project/pangolin-server/caddyhttp/staticfiles"
+	"github.com/pangolin-project/pangolin-server/caddytls"
+	"github.com/pangolin-project/pangolin-server/telemetry"
 )
 
 const serverType = "http"

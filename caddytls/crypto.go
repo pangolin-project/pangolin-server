@@ -41,7 +41,7 @@ import (
 
 	"golang.org/x/crypto/ocsp"
 
-	"github.com/mholt/caddy"
+	"github.com/pangolin-project/pangolin-server"
 	"github.com/xenolf/lego/acmev2"
 )
 

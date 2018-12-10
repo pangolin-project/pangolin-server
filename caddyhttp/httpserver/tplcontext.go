@@ -31,7 +31,7 @@ import (
 
 	"os"
 
-	"github.com/mholt/caddy/caddytls"
+	"github.com/pangolin-project/pangolin-server/caddytls"
 	"github.com/russross/blackfriday"
 )
 

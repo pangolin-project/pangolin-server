@@ -22,8 +22,8 @@ import (
 
 	"fmt"
 
-	"github.com/mholt/caddy"
-	"github.com/mholt/caddy/caddyfile"
+	"github.com/pangolin-project/pangolin-server"
+	"github.com/pangolin-project/pangolin-server/caddyfile"
 )
 
 func TestStandardizeAddress(t *testing.T) {

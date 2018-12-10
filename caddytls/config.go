@@ -25,7 +25,7 @@ import (
 	"strings"
 
 	"github.com/klauspost/cpuid"
-	"github.com/mholt/caddy"
+	"github.com/pangolin-project/pangolin-server"
 	"github.com/xenolf/lego/acmev2"
 )
 
@@ -665,7 +665,7 @@ var defaultCiphersNonAESNI = []uint16{
 // getPreferredDefaultCiphers returns an appropriate cipher suite to use, depending on
 // the hardware support available for AES-NI.
 //
-// See https://github.com/mholt/caddy/issues/1674
+// See https://github.com/pangolin-project/pangolin-server/issues/1674
 func getPreferredDefaultCiphers() []uint16 {
 	if cpuid.CPU.AesNi() {
 		return defaultCiphers

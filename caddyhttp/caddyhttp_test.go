@@ -18,7 +18,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/mholt/caddy"
+	"github.com/pangolin-project/pangolin-server"
 )
 
 // TODO: this test could be improved; the purpose is to

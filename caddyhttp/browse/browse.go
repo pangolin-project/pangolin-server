@@ -30,8 +30,8 @@ import (
 	"time"
 
 	"github.com/dustin/go-humanize"
-	"github.com/mholt/caddy/caddyhttp/httpserver"
-	"github.com/mholt/caddy/caddyhttp/staticfiles"
+	"github.com/pangolin-project/pangolin-server/caddyhttp/httpserver"
+	"github.com/pangolin-project/pangolin-server/caddyhttp/staticfiles"
 )
 
 const (

@@ -27,8 +27,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/mholt/caddy"
-	"github.com/mholt/caddy/telemetry"
+	"github.com/pangolin-project/pangolin-server"
+	"github.com/pangolin-project/pangolin-server/telemetry"
 )
 
 func init() {

@@ -17,7 +17,7 @@ package httpserver
 import (
 	"time"
 
-	"github.com/mholt/caddy/caddytls"
+	"github.com/pangolin-project/pangolin-server/caddytls"
 )
 
 // SiteConfig contains information about a site

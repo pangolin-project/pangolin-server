@@ -30,7 +30,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/mholt/caddy/caddytls"
+	"github.com/pangolin-project/pangolin-server/caddytls"
 )
 
 func TestNewReplacer(t *testing.T) {

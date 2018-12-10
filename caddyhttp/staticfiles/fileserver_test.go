@@ -27,7 +27,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/mholt/caddy"
+	"github.com/pangolin-project/pangolin-server"
 )
 
 // TestServeHTTP covers positive scenarios when serving files.

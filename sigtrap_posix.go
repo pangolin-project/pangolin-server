@@ -22,7 +22,7 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.com/mholt/caddy/telemetry"
+	"github.com/pangolin-project/pangolin-server/telemetry"
 )
 
 // trapSignalsPosix captures POSIX-only signals.

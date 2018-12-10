@@ -20,9 +20,9 @@ import (
 	"net/http"
 	"text/template"
 
-	"github.com/mholt/caddy"
-	"github.com/mholt/caddy/caddyhttp/httpserver"
-	"github.com/mholt/caddy/caddyhttp/staticfiles"
+	"github.com/pangolin-project/pangolin-server"
+	"github.com/pangolin-project/pangolin-server/caddyhttp/httpserver"
+	"github.com/pangolin-project/pangolin-server/caddyhttp/staticfiles"
 )
 
 func init() {

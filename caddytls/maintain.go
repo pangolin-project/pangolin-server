@@ -21,7 +21,7 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/mholt/caddy"
+	"github.com/pangolin-project/pangolin-server"
 
 	"golang.org/x/crypto/ocsp"
 )

@@ -1,7 +1,7 @@
 package hook
 
 import (
-	"github.com/mholt/caddy"
+	"github.com/pangolin-project/pangolin-server"
 )
 
 // Config describes how Hook should be configured and used.

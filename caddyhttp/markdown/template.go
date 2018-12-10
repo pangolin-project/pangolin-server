@@ -21,8 +21,8 @@ import (
 	"sync"
 	"text/template"
 
-	"github.com/mholt/caddy/caddyhttp/httpserver"
-	"github.com/mholt/caddy/caddyhttp/markdown/metadata"
+	"github.com/pangolin-project/pangolin-server/caddyhttp/httpserver"
+	"github.com/pangolin-project/pangolin-server/caddyhttp/markdown/metadata"
 )
 
 // Data represents a markdown document.

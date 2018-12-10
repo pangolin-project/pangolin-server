@@ -18,8 +18,8 @@ import (
 	"log"
 	"os"
 
-	"github.com/mholt/caddy"
-	"github.com/mholt/caddy/caddyhttp/httpserver"
+	"github.com/pangolin-project/pangolin-server"
+	"github.com/pangolin-project/pangolin-server/caddyhttp/httpserver"
 )
 
 func init() {

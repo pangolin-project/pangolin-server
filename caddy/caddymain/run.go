@@ -28,13 +28,13 @@ import (
 	"strings"
 
 	"github.com/klauspost/cpuid"
-	"github.com/mholt/caddy"
-	"github.com/mholt/caddy/caddytls"
-	"github.com/mholt/caddy/telemetry"
+	"github.com/pangolin-project/pangolin-server"
+	"github.com/pangolin-project/pangolin-server/caddytls"
+	"github.com/pangolin-project/pangolin-server/telemetry"
 	"github.com/xenolf/lego/acmev2"
 	"gopkg.in/natefinch/lumberjack.v2"
 
-	_ "github.com/mholt/caddy/caddyhttp" // plug in the HTTP server type
+	_ "github.com/pangolin-project/pangolin-server/caddyhttp" // plug in the HTTP server type
 	// This is where other plugins get plugged in (imported)
 )
 

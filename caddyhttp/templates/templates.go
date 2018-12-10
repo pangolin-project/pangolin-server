@@ -28,7 +28,7 @@ import (
 	"text/template"
 	"time"
 
-	"github.com/mholt/caddy/caddyhttp/httpserver"
+	"github.com/pangolin-project/pangolin-server/caddyhttp/httpserver"
 )
 
 // ServeHTTP implements the httpserver.Handler interface.

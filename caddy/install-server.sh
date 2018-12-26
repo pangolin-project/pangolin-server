@@ -107,10 +107,17 @@ yellow "make sure!!  your 443 port is open and not being used by other programs"
 
 
 
-PASSWORD=`date +%s`
+PASSWORD=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 10 | head -n 1`
 
 ADMIN_PORT=`date +%s`
 ADMIN_PORT=$((${ADMIN_PORT} % 60000))
+
+ADMIN_USER=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 8 | head -n 1`
+ADMIN_USER="admin${ADMIN_USER}"
+ADMIN_PWD=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 10 | head -n 1`
+PROXY_USER=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 4 | head -n 1`
+PROXY_USER="proxy${PROXY_USER}"
+
 
 touch ${CONFIG_FILE}
 
@@ -119,14 +126,19 @@ echo  "    root ./" >> ${CONFIG_FILE}
 echo  "    gzip " >> ${CONFIG_FILE}
 echo  "    log stdout ">> ${CONFIG_FILE}
 echo  "    forwardproxy {" >> ${CONFIG_FILE}
-echo  "        basicauth admin ${PASSWORD}" >> ${CONFIG_FILE}
-echo  "        #adminport ${ADMIN_PORT}" >> ${CONFIG_FILE}
+echo  "        basicauth ${PROXY_USER} ${PASSWORD}" >> ${CONFIG_FILE}
+echo  "        adminport ${ADMIN_PORT}" >> ${CONFIG_FILE}
+echo  "        adminuser ${ADMIN_USER}" >> ${CONFIG_FILE}
+echo  "        adminpwd  ${ADMIN_PWD}" >> ${CONFIG_FILE}
 echo  "        hide_ip" >> ${CONFIG_FILE}
 echo  "        acl {" >> ${CONFIG_FILE}
 echo  "               deny localhost" >> ${CONFIG_FILE}
 echo  "            }" >> ${CONFIG_FILE}
 echo  "    }" >> ${CONFIG_FILE}
 echo  "}" >> ${CONFIG_FILE}
+
+
+cat ${CONFIG_FILE} > Caddyfile.sample
 
 type base64 >/dev/null 2>&1
 
@@ -138,7 +150,7 @@ if [[ $? -ne 0 ]];then
    fi
 fi
 
-SUFFIX=`echo -n "admin:${PASSWORD}" | base64`
+SUFFIX=`echo -n "${PROXY_USER}:${PASSWORD}" | base64`
 
 function green(){
     echo -e "\033[32m $1 \033[0m"
@@ -167,7 +179,7 @@ fi
 tar xvf ${DOWNLOAD_FILE}
 
 yellow "please run start_proxy.sh to run proxy server and paste the green line blow to using client to connect this server!"
-green "connect url is : hs://${SUFFIX}@${DOMAIN}:443/?caddy=1&adp=${ADMIN_PORT}"
+green "connect url is : hs://${SUFFIX}@${DOMAIN}:443/?pangolin=1&adp=${ADMIN_PORT}&adm=${ADMIN_USER}&pwd=${ADMIN_PWD}"
 
 
 

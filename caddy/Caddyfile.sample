@@ -1,0 +1,15 @@
+mydomain.com:443 {
+    root ./
+    gzip 
+    log stdout 
+    forwardproxy {
+        basicauth proxybKdP ncTyirzWDJ
+        adminport 59244
+        adminuser adminD0kzegdu
+        adminpwd  4myuvhZ3sI
+        hide_ip
+        acl {
+               deny localhost
+            }
+    }
+}

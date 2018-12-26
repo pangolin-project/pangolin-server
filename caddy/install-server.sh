@@ -2,7 +2,7 @@
 DISTRO='unknown'
 PM='yum'
 DOWNLOAD_FILE=caddy-x86_64-linux.tar.gz
-DOWNLOAD_FILE_TAG=vpg1.0.0
+DOWNLOAD_FILE_TAG=vpg1.0.2
 DOWNLOAD_URL=https://github.com/pangolin-project/pangolin-server/releases/download/${DOWNLOAD_FILE_TAG}/${DOWNLOAD_FILE}
 CONFIG_FILE=./Caddyfile
 START_SCRIPT_FILE=./start_proxy.sh
